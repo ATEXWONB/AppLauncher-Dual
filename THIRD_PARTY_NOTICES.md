@@ -21,6 +21,7 @@
 - 资源：`app/src/main/res/` 布局、图标、收款码等
 - 构建/补丁工具：`tools/patch/*.java`（AAR 字节码补丁：`PatchVClient`、`PatchExtProcess`、`PatchWeChatHook`、`RenameXposedStubs`）、`scripts/*.sh`
 - 内置模组 `app/src/main/assets/libmcmod.so`：来自 https://github.com/ATEXWONB/MCPE-ImGuiMod （MIT，其第三方依赖见该仓库 `THIRD_PARTY_NOTICES.md`）
+- 动态库加载器（四架构 TInjector 移植版）：https://github.com/ATEXWONB/TInjector ，启动器的「SO 注入 / 动态库加载」能力参考并引用该项目。该项目中：TInjector 本体 © Mrack（原项目未声明许可，商用需作者授权）、Dobby（Apache-2.0）、ELFIO（MIT）、nlohmann/json（MIT）、本次移植与重写的 `tinjector`（Apache-2.0），逐项说明见该仓库 `THIRD_PARTY_NOTICES.md`
 
 ## 三、Java / Android 依赖（均为 Apache-2.0 等宽松许可，可商用）
 

@@ -76,7 +76,17 @@ bash scripts/build_all.sh
 | `直装分身-v1.0-x86_64.apk` | x86_64 | ✅ x86_64 | 模拟器；同上，无 x86_64 沙箱库 |
 | `直装分身-v1.0-universal-arm64-v8a,armeabi-v7a,x86,x86_64.apk` | 全架构 | ✅ ARM64（默认） | 一个包装全部 ABI，`libmcmod.so` 默认 ARM64，其他架构进程因 ELF 校验自动跳过 |
 
-`libmcmod.so` 来自配套项目 [MCPE-ImGuiMod](https://github.com/ATEXWONB/MCPE-ImGuiMod)；该 mod 目前只有 ARM64 版本，所以 32 位/x86 包不带它。
+`libmcmod.so` 来自配套项目 [MCPE-ImGuiMod](https://github.com/ATEXWONB/MCPE-ImGuiMod)；四个架构的 `.so` 已随各架构 APK 打包（universal 仍为 ARM64 默认）。
+
+**动态库加载器**：启动器的动态库注入能力参考/引用了四架构移植版 [TInjector](https://github.com/ATEXWONB/TInjector)（`tinjector` / `libtcore.so` / 四架构预编译产物）。该项目本体 © Mrack，配套 Dobby（Apache-2.0）、ELFIO（MIT）、nlohmann/json（MIT）。
+
+## 腾讯系应用启动提醒
+
+在应用列表选中某个应用后点「启动」，如果包名包含 `tencent`（QQ、微信、腾讯游戏等），会先弹一次风险提示：
+
+> 此程序为腾讯的APP，启动可能会导致您的账号被封号或存在风控不可控因素。
+
+点「仍要启动」才继续，点「取消」不启动。其它应用不受影响；启动失败后的自动重试不会重复弹窗。
 
 ## 致谢
 
