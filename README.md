@@ -84,6 +84,8 @@ bash scripts/build_all.sh
 - NPatch（Xposed 载荷思路）
 - Dear ImGui（配套 mod 的 UI）
 
-## 许可
+## 许可与第三方代码
 
-沙箱部分源自 VirtualApp（GPL-3.0），因此本仓库整体按 **GPL-3.0** 发布，详见 `LICENSE`。
+- 沙箱内核来自 **VirtualApp**（https://github.com/asLody/VirtualApp ）及其 V14 fork（https://github.com/ServenScorpion/VirtualApp ），均为 **GPL-3.0**；`xposedcompat` 来自 LSPosed。因此本仓库整体按 **GPL-3.0** 发布，根目录 `LICENSE` 为 GPL-3.0 全文。
+- **能否商用**：GPL-3.0 **允许商业使用**，但分发时必须同样以 GPL-3.0 公开完整对应源码；**闭源商用不允许**（除非另行取得 VirtualApp 商业授权，本项目无权代授）。
+- 完整的逐项清单（每个组件、上游仓库、仓库内实际版本、许可、商用条件，以及 Java 依赖表）见 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)。
