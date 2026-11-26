@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FF121212">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="模块"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#FFECEFF1"
+        android:background="#FF1E1E1E"
+        android:padding="12dp" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="未激活"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFB74D"
+        android:background="#FF1A1A1A"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="11sp"
+        android:textColor="#FF90A4AE"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp" />
+
+    <Button
+        android:id="@+id/btn_open_ui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="在分身内打开模块界面（改配置）"
+        android:textSize="15sp"
+        android:textColor="#FF69F0AE"
+        android:backgroundTint="#FF1B3B2F" />
+
+    <Button
+        android:id="@+id/btn_toggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启用此模块"
+        android:textSize="15sp"
+        android:textColor="#FFECEFF1"
+        android:backgroundTint="#FF263238" />
+
+    <TextView
+        android:id="@+id/tv_prefs_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="模块配置（点一行可直接改值）"
+        android:textSize="12sp"
+        android:textColor="#FF69F0AE"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="4dp" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#FF2A2A2A"
+        android:dividerHeight="1dp"
+        android:background="#FF121212" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="刷新"
+            android:textSize="14sp"
+            android:textColor="#FFECEFF1"
+            android:backgroundTint="#FF263238" />
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="清空配置"
+            android:textSize="14sp"
+            android:textColor="#FFFF8A80"
+            android:backgroundTint="#FF3E2723" />
+    </LinearLayout>
+</LinearLayout>

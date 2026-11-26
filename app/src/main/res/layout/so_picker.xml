@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FF121212">
+
+    <TextView
+        android:id="@+id/tv_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="当前目录:"
+        android:textSize="13sp"
+        android:textColor="#FF80CBC4"
+        android:background="#FF1E1E1E"
+        android:padding="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_up"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="返回上级目录"
+            android:textSize="15sp"
+            android:textColor="#FFECEFF1"
+            android:backgroundTint="#FF263238" />
+
+        <Button
+            android:id="@+id/btn_manual"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="输入路径"
+            android:textSize="15sp"
+            android:textColor="#FFECEFF1"
+            android:backgroundTint="#FF263238" />
+        <Button
+            android:id="@+id/btn_app_libs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="应用SO"
+            android:textSize="15sp"
+            android:textColor="#FFECEFF1"
+            android:backgroundTint="#FF263238" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_builtin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用内置库 libmcmod.so（默认）"
+        android:textSize="15sp"
+        android:textColor="#FF69F0AE"
+        android:backgroundTint="#FF1B3B2F" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#FF333333"
+        android:dividerHeight="1dp"
+        android:cacheColorHint="#FF121212"
+        android:background="#FF121212" />
+</LinearLayout>

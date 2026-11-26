@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.carlos">
+    <!-- 应用列表直接扫描安装目录获得，不再申请「获取应用列表」权限 -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <!-- QUERY_ALL_PACKAGES plus LAUNCHER intent: two independent visibility channels -->
+    <queries>
+        <package android:name="com.mojang.minecraftpe" />
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+        </intent>
+    </queries>
+    <!-- 启动器权限 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!--外部存储的写权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--外部存储的读权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- SandHook -->
+    <uses-sdk tools:overrideLibrary="com.swift.sandhook.lib, com.swift.sandhook.xposedcompat"/>
+
+    <uses-permission android:name="${PACKAGE_NAME_32BIT}.permission.SAFE_ACCESS" />
+    <!-- 通话记录 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <!-- call phone -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <!-- sms-->
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <!-- google app start -->
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.OTHER_SERVICES" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.YouTubeUser" />
+    <!-- google app end -->
+
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <application
+        android:extractNativeLibs="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:requestLegacyExternalStorage="true"
+        android:networkSecurityConfig="@xml/network_security"
+        android:resizeableActivity="true"
+        android:name="com.carlos.common.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="直装分身"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="77f19c1a1debd7687c396a196a88195b" />
+        <meta-data
+            android:name="ScorpionSDK"
+            android:value="zxc77848" />
+
+        <activity
+            android:name="com.carlos.splash.splashActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme" />
+
+        <!-- 用户的启动器入口，继承 VA 引擎环境 -->
+        <activity
+            android:name="com.applauncher.dual.LauncherActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.applauncher.dual.LauncherAppListActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+
+        <!-- 自带 SO 文件浏览页：显示所有文件，选择时校验 .so 后缀 -->
+        <activity
+            android:name="com.applauncher.dual.SoPickerActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+
+        <!-- LSP/Xposed 模块勾选页 -->
+        <activity
+            android:name="com.applauncher.dual.LspModuleActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+
+        <!-- 单个模块详情：激活状态 / 分身内打开模块界面 / 直接改配置 -->
+        <activity
+            android:name="com.applauncher.dual.LspModuleDetailActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+
+        <!-- 「?」角标打开的关于页：初衷 / 原理 / 免责声明 / 捐赠码 / 引用仓库 -->
+        <activity
+            android:name="com.applauncher.dual.AboutActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name="com.carlos.home.HomeActivity"
+            android:theme="@style/UITheme" />
+
+        <activity
+            android:name="com.carlos.home.ListAppActivity"
+            android:theme="@style/UITheme" />
+
+
+        <activity
+            android:name="com.carlos.home.PermissionRequestActivity"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.carlos.home.AppSettingActivity"
+            android:theme="@style/UITheme.HasActionBar" />
+
+        <activity android:name="com.carlos.home.XposedManager.XposedManagerActivity"
+            android:label="Xposed Manager"
+            android:theme="@style/UITheme" />
+        <!-- va的x进程处理 -->
+        <receiver
+            android:name="com.carlos.PackageReceiver"
+            android:exported="true"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+
+        <!--<provider
+            android:name=".sandxposed.SandHookConfigProvider"
+            android:authorities="io.virtualapp.sandvxposed:x"
+            android:exported="false"
+            android:process=":x" />-->
+    </application>
+
+
+</manifest>

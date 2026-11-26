@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF121212">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tv_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未选择应用"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFECEFF1"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btn_launch"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="启动双开"
+            android:textSize="18sp"
+            android:textColor="#FFFFFFFF"
+            android:backgroundTint="#FF263238"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_select"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="选择App"
+            android:textSize="18sp"
+            android:textColor="#FFFFFFFF"
+            android:backgroundTint="#FF263238"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_select_so"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="选择SO库"
+            android:textSize="18sp"
+            android:textColor="#FFFFFFFF"
+            android:backgroundTint="#FF263238"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_inject"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="注入: 开"
+            android:textSize="16sp"
+            android:textColor="#FF69F0AE"
+            android:backgroundTint="#FF263238"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_lsp"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="LSP模块（已选 0）"
+            android:textSize="16sp"
+            android:textColor="#FF80CBC4"
+            android:backgroundTint="#FF263238"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_datadir"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="数据目录: 内部私有"
+            android:textSize="14sp"
+            android:textColor="#FF80CBC4"
+            android:backgroundTint="#FF263238"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tv_so"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SO: 未选择"
+            android:textSize="13sp"
+            android:textColor="#FF80CBC4"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#FFB0BEC5"
+            android:gravity="center"
+            android:layout_marginTop="32dp" />
+    </LinearLayout>
+
+    <!-- 右上角自适应角落：说明 / 关于（手机、平板都在同一角落，内容居中区不受影响） -->
+    <Button
+        android:id="@+id/btn_about"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:padding="0dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFB0BEC5"
+        android:background="@drawable/bg_about_btn" />
+</FrameLayout>

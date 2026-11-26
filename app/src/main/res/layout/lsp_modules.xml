@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FF121212">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LSP 模块"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#FFECEFF1"
+        android:background="#FF1E1E1E"
+        android:padding="12dp" />
+
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自动扫描本机已安装的 Xposed / LSPosed 模块。勾选后，启动分身时会把它们加载进目标 App。"
+        android:textSize="12sp"
+        android:textColor="#FF90A4AE"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="全选可加载"
+            android:textSize="14sp"
+            android:textColor="#FFECEFF1"
+            android:backgroundTint="#FF263238" />
+
+        <Button
+            android:id="@+id/btn_none"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="全部取消"
+            android:textSize="14sp"
+            android:textColor="#FFECEFF1"
+            android:backgroundTint="#FF263238" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="已选 0 个"
+        android:textSize="13sp"
+        android:textColor="#FF69F0AE"
+        android:background="#FF1A1A1A"
+        android:padding="10dp" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#FF2A2A2A"
+        android:dividerHeight="1dp"
+        android:cacheColorHint="#FF121212"
+        android:background="#FF121212" />
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="完成（返回启动器）"
+        android:textSize="16sp"
+        android:textColor="#FF69F0AE"
+        android:backgroundTint="#FF1B3B2F" />
+</LinearLayout>

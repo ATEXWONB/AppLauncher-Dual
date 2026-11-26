@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF121212"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="关于「直装分身」"
+            android:textColor="#FFECEFF1"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:autoLink="email"
+            android:text="BY: ATEXWONB\nATEXWONB@GMAIL.COM"
+            android:textColor="#FFB0BEC5"
+            android:textColorLink="#FF64B5F6"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="制作初衷"
+            android:textColor="#FF80CBC4"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:lineSpacingExtra="3dp"
+            android:text="最初只是为了在单机游戏里安全地加载自己做好的 .so 做调试：不想改目标 APK、不想 root、也不想每次重新打包。于是做成一个常驻启动器——选好目标应用和动态库，点一下就让它在隔离环境里带着库和模块跑起来。"
+            android:textColor="#FFD6D6D6"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="运行原理"
+            android:textColor="#FF80CBC4"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:lineSpacingExtra="3dp"
+            android:text="1. 目标应用运行在 VirtualApp 的 guest 进程里（独立的数据目录与 uid 视图），全程不修改目标 APK 本体。\n\n2. 进入 guest 进程、Application 创建之前，先把 Xposed 内核（Vector + NPatch 载荷）装进该进程，再加载你勾选的模块。\n\n3. 模块按版本自动分流：API ≤ 94 走经典 Xposed 桥；API 101/102 走 libxposed 现代接口。两类模块由各自独立的 ClassLoader 加载，可以在同一个进程里共存。\n\n4. 你选择的 .so 会在 guest 进程内 dlopen 加载，供单机游戏调试使用；未开启「注入」时只做普通双开。\n\n5. 模块、配置、日志都只留在本机（应用私有目录），不上传任何数据。"
+            android:textColor="#FFD6D6D6"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="免责声明"
+            android:textColor="#FF80CBC4"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:lineSpacingExtra="3dp"
+            android:text="1. 本应用仅对单机游戏起作用，不针对、不兼容任何联网游戏。\n\n2. 微信双开、QQ 双开等社交软件多开不在支持范围内；由此出现的登录异常、限制登录、账号被封、聊天记录或数据丢失等情况，均由使用者自行承担，与作者无任何关系。\n\n3. 在联网游戏中使用本应用或加载第三方模块，可能违反该游戏服务条款，导致封号、封禁设备、扣除收益等后果，风险与后果由使用者自行承担，与作者无任何关系。\n\n4. 本应用本身不提供任何作弊、修改游戏数据、绕过检测的能力；你自行安装、勾选的第三方模块（含其造成的封号、数据损坏、隐私泄露）由该模块作者与使用者负责，与本应用作者无关。\n\n5. 请在遵守所在地法律法规及各应用用户协议的前提下使用；因违规使用产生的一切责任由使用者承担。"
+            android:textColor="#FFD6D6D6"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="支持作者"
+            android:textColor="#FF80CBC4"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="如果你愿意支持作者，可以扫描下方二维码捐赠，感谢你的支持。"
+            android:textColor="#FFD6D6D6"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_qr_wx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:background="#FFFFFFFF"
+                    android:contentDescription="微信支付收款码"
+                    android:padding="6dp"
+                    android:src="@drawable/qrcode_wx" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:text="微信支付"
+                    android:textColor="#FFD6D6D6"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="14dp"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_qr_ali"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:background="#FFFFFFFF"
+                    android:contentDescription="支付宝收款码"
+                    android:padding="6dp"
+                    android:src="@drawable/qrcode_ali" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:text="支付宝"
+                    android:textColor="#FFD6D6D6"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="引用与致谢"
+            android:textColor="#FF80CBC4"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="本应用建立在以下开源项目之上，感谢作者们的贡献。点按链接即可跳转浏览器查看完整源码："
+            android:textColor="#FFD6D6D6"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_repo1"
+            android:autoLink="web"
+            android:lineSpacingExtra="3dp"
+            android:text="· VirtualApp（分身内核）\nhttps://github.com/asLody/VirtualApp"
+            android:textColor="#FFD6D6D6"
+            android:textColorLink="#FF64B5F6"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_repo2"
+            android:autoLink="web"
+            android:lineSpacingExtra="3dp"
+            android:text="· Vector（Xposed 内核分支）\nhttps://github.com/JingMatrix/Vector"
+            android:textColor="#FFD6D6D6"
+            android:textColorLink="#FF64B5F6"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_repo3"
+            android:autoLink="web"
+            android:lineSpacingExtra="3dp"
+            android:text="· NPatch（注入载荷与模块加载）\nhttps://github.com/7723mod/NPatch"
+            android:textColor="#FFD6D6D6"
+            android:textColorLink="#FF64B5F6"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_repo4"
+            android:autoLink="web"
+            android:lineSpacingExtra="3dp"
+            android:text="· libxposed API（现代模块接口）\nhttps://github.com/libxposed/api"
+            android:textColor="#FFD6D6D6"
+            android:textColorLink="#FF64B5F6"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_repo5"
+            android:autoLink="web"
+            android:lineSpacingExtra="3dp"
+            android:text="· DexKit（模块侧类/方法定位）\nhttps://github.com/LuckyPray/DexKit"
+            android:textColor="#FFD6D6D6"
+            android:textColorLink="#FF64B5F6"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_repo6"
+            android:autoLink="web"
+            android:lineSpacingExtra="3dp"
+            android:text="· I-Am-Pad / impad pro（平板适配思路）\nhttps://github.com/SymonChu/I-Am-Pad"
+            android:textColor="#FFD6D6D6"
+            android:textColorLink="#FF64B5F6"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_repo7"
+            android:autoLink="web"
+            android:lineSpacingExtra="3dp"
+            android:text="· ImPad（平板适配参考实现）\nhttps://github.com/NKU100/ImPad"
+            android:textColor="#FFD6D6D6"
+            android:textColorLink="#FF64B5F6"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:lineSpacingExtra="3dp"
+            android:text="以上项目版权归各自作者所有，本应用仅个人自用，按其各自开源许可证使用。\nBY: ATEXWONB · ATEXWONB@GMAIL.COM"
+            android:autoLink="email"
+            android:textColor="#FF9E9E9E"
+            android:textColorLink="#FF64B5F6"
+            android:textSize="12sp" />
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="30dp" />
+    </LinearLayout>
+</ScrollView>
+

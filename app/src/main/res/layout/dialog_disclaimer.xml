@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_disclaimer"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="18dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/tv_disc_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="免责声明"
+        android:textColor="#FFFFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_disc_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="首次使用前请务必阅读，10 秒后按钮才可点击"
+        android:textColor="#FFFFB74D"
+        android:textSize="12sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_marginTop="10dp"
+        android:fadeScrollbars="false"
+        android:scrollbarStyle="insideInset">
+
+        <TextView
+            android:id="@+id/tv_disc_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3dp"
+            android:textColor="#FFE0E0E0"
+            android:textSize="14sp"
+            android:text="本应用仅面向单机游戏与本机应用的运行环境隔离、模块加载场景，请在使用前逐条阅读以下内容：\n\n1. 仅对单机游戏起作用。本应用不针对、不兼容任何联网游戏，也不对联网游戏的运行结果做任何承诺。\n\n2. 微信双开、QQ 双开等社交软件多开不在支持范围内。由此出现的登录异常、限制登录、账号被封、聊天记录或数据丢失等情况，均由使用者自行承担，与作者无任何关系。\n\n3. 在联网游戏中使用本应用或加载第三方模块，可能违反该游戏的服务条款，导致封号、封禁设备、扣除收益等后果，风险与后果由使用者自行承担，与作者无任何关系。\n\n4. 本应用本身不提供任何作弊、修改游戏数据、绕过检测的能力。你自行安装、勾选的第三方模块（含其造成的封号、数据损坏、隐私泄露）由该模块作者与使用者负责，与本应用作者无关。\n\n5. 请在遵守所在地法律法规以及各应用用户协议的前提下使用本应用；因违规使用产生的一切责任由使用者承担。\n\n6. 点击下方「确定」即表示你已完整阅读、理解并同意以上全部内容；若不同意，请直接退出并卸载本应用。\n" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_disc_agree"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="14dp"
+        android:enabled="false"
+        android:text="确定（10 秒）"
+        android:textColor="#FFFFFFFF"
+        android:textSize="15sp" />
+</LinearLayout>

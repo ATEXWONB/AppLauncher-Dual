@@ -1,0 +1,25 @@
+import java.text.SimpleDateFormat
+
+ext {
+    PACKAGE_NAME                = "com.applauncher.dual"
+    EXT_PACKAGE_NAME            = "com.applauncher.dual.ext"
+
+
+    VA_MAIN_PACKAGE_32BIT       = false
+    VA_ACCESS_PERMISSION_NAME   = "com.applauncher.dual.permission.SAFE_ACCESS"
+    VA_AUTHORITY_PREFIX         = "com.applauncher.dual"
+    VA_EXT_AUTHORITY_PREFIX     = "com.applauncher.dual"
+    VA_VERSION                  = '2.3.2'
+    VA_VERSION_CODE             = 23202
+    VA_FULL_EXT                 = true //如果这个是true ,那么将32里面的一些代码都会打包到插件apk 里面来
+
+    // === lib 源码模块编译所需兼容变量（须在 PACKAGE_NAME 定义后）===
+    PACKAGE_NAME_32BIT          = PACKAGE_NAME
+    VERSION                     = VA_VERSION
+    VERSION_CODE                = VA_VERSION_CODE
+
+    signing_storeFile           = "${rootDir}/security/scorpion.jks"
+    signing_storePassword       = "scorpion123"
+    signing_keyAlias            = "scorpion"
+    signing_keyPassword         = "scorpion123"
+}
