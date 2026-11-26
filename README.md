@@ -71,9 +71,9 @@ bash scripts/build_all.sh
 | 包 | ABI | 内置 `libmcmod.so` | 说明 |
 | --- | --- | --- | --- |
 | `直装分身-v1.0-arm64-v8a.apk` | arm64-v8a | ✅ ARM64 | 绝大多数手机（推荐） |
-| `直装分身-v1.0-armeabi-v7a.apk` | armeabi-v7a | ❌ | 老 32 位设备；沙箱可用，Xposed/npatch 载荷缺失会自动跳过 |
-| `直装分身-v1.0-x86.apk` | x86 | ❌ | 模拟器；**沙箱核心库无 x86 版本，无法正常运行**，仅作编译产物保留 |
-| `直装分身-v1.0-x86_64.apk` | x86_64 | ❌ | 模拟器；同上，无 x86_64 沙箱库 |
+| `直装分身-v1.0-armeabi-v7a.apk` | armeabi-v7a | ✅ ARM32 | 老 32 位设备；沙箱可用，模组能加载但偏移按 arm64 反推、无实际效果；npatch 载荷缺失会自动跳过 Xposed 注入 |
+| `直装分身-v1.0-x86.apk` | x86 | ✅ x86 | 模拟器；**沙箱核心库无 x86 版本，无法正常运行**，仅作编译产物保留 |
+| `直装分身-v1.0-x86_64.apk` | x86_64 | ✅ x86_64 | 模拟器；同上，无 x86_64 沙箱库 |
 | `直装分身-v1.0-universal-arm64-v8a,armeabi-v7a,x86,x86_64.apk` | 全架构 | ✅ ARM64（默认） | 一个包装全部 ABI，`libmcmod.so` 默认 ARM64，其他架构进程因 ELF 校验自动跳过 |
 
 `libmcmod.so` 来自配套项目 [MCPE-ImGuiMod](https://github.com/ATEXWONB/MCPE-ImGuiMod)；该 mod 目前只有 ARM64 版本，所以 32 位/x86 包不带它。
